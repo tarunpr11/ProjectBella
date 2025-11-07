@@ -1,0 +1,257 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ConvertCurrency" this:ConvertCurrency.in_ToCurrency="Indian Rupees" this:ConvertCurrency.in_FromCurrency="US Dollars" this:ConvertCurrency.in_Amount="250" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_ToCurrency" Type="InArgument(x:String)" />
+    <x:Property Name="in_FromCurrency" Type="InArgument(x:String)" />
+    <x:Property Name="in_Amount" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ConvertCurrency_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="ConvertCurrency" sap:VirtualizedContainerService.HintSize="1199.6000000000001,2280" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="conversionResult" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="518.4,1565.6" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="516.8,1076.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome New Tab(1)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="483.2,1016.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="38f8dfac-b4bd-47e7-803e-2695d23ad07e" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,776.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'grouping'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" ScopeIdentifier="38f8dfac-b4bd-47e7-803e-2695d23ad07e" Text="[&quot;https://www.google.com/search?q=&quot; + in_Amount + &quot;+&quot; + in_FromCurrency.Replace(&quot; &quot;,&quot;+&quot;) + &quot;+to+&quot; + in_ToCurrency.Replace(&quot; &quot;,&quot;+&quot;)]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="newtab" CVScreenId="f644b4b7-2d78-43a9-abf2-c105966711ce" ContentHash="97azg2qPQEqEQZX-oESGzA" CvElementArea="159, 65, 1586, 44" CvType="InputBox" DesignTimeRectangle="205, 72, 1497, 31" ElementType="InputBox" FullSelectorArgument="&lt;ctrl name='New Tab - Google Chrome - Tarun' role='pane' /&gt;&lt;ctrl name='Address and search bar' role='editable text' /&gt;" Guid="017eeefc-445b-480b-a7bf-de9061502f04" InformativeScreenshot="46921ffee5c9352513d8792abee02813.png" Reference="v2DTeIDVwU6yhkDp0M6D7w/oTVMb9J1aEGBadCSWgJ1Ww" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='New Tab - Google Chrome' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="159, 66, 1598, 43" FullSelectorArgument="&lt;ctrl name='New Tab - Google Chrome - Tarun' role='pane' /&gt;&lt;ctrl idx='2' role='grouping' /&gt;" Guid="060a286d-6f7c-427a-b969-4094d83b90f2" SearchSteps="Selector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <uix:NTypeInto.VerifyOptions>
+                      <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionTypeIntoOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionTypeIntoOptions.Retry>
+                        <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                      </uix:VerifyExecutionTypeIntoOptions>
+                    </uix:NTypeInto.VerifyOptions>
+                  </uix:NTypeInto>
+                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V5">
+                    <uix:NKeyboardShortcuts.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NKeyboardShortcuts.VerifyOptions>
+                  </uix:NKeyboardShortcuts>
+                  <uix:NGetText DisplayName="Get Text '100 United States Dolla…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,182.4" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="38f8dfac-b4bd-47e7-803e-2695d23ad07e" TextString="[conversionResult]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="google.com/search" CVScreenId="6394c413-da00-4daa-95e6-f5e52ef8084b" ContentHash="s_Kd2EF2lkC1Oez47pYwmQ" CvType="AnyWordGroup" DesignTimeRectangle="266, 429, 195, 56" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='knowledge-currency__updatable-data-column' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' tag='SPAN' type='' class='DFlfde SwHCTb' matching:class='fuzzy' fuzzylevel:class='0.0' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;block-component&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' /&gt;" Guid="fe65146e-85e1-43d6-92cc-d31e792a2e1b" ImageBase64="" InformativeScreenshot="2ee0b9d20baff70ebb9de49f5259e362.png" Reference="v2DTeIDVwU6yhkDp0M6D7w/sIF2XitZC0uAOf4ZmcpmIA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='250 US Dollars to Indian Rupees - Google Search' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CVScreenId="6394c413-da00-4daa-95e6-f5e52ef8084b" CvElementArea="264, 600, 400, 59" CvType="InputBox" DesignTimeRectangle="416, 603, 245, 52" ElementType="DropDown" FullSelectorArgument="&lt;webctrl tag='SELECT' /&gt;" Guid="b2c6ceae-7184-4e3a-ba13-109ac1dd9c15" SearchSteps="Selector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" ContentHash="8ppoScN3Uku1uh3CCb0Uqg" IconBase64="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" InformativeScreenshot="75b9fd8e19be15b3940d91d3fde48a1a.png" Reference="v2DTeIDVwU6yhkDp0M6D7w/Zz9ClxwbOUqFHVQpYGCSPw" Selector="&lt;html app='chrome.exe' title='New Tab' /&gt;" Url="chrome://newtab/" Version="V2" />
+            </uix:NApplicationCard.TargetApp>
+          </uix:NApplicationCard>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="516.8,225.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="483.2,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Error scraping currency conversion: &quot; + exception.Message]" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="516.8,89.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="518.4,691.2" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="449.6,217.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="C:\Tarun\College\Sem - 7\Theory\RPA\Project\Project Bella\currency_output.txt" sap:VirtualizedContainerService.HintSize="416,157.6" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[in_Amount + &quot; &quot; + in_FromCurrency + &quot; is equal to &quot; + conversionResult + &quot; &quot; + in_ToCurrency]" />
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="si:IOException" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+          <ActivityAction x:TypeArguments="si:IOException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="si:IOException" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="449.6,225.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[&quot;Error writing currency output file: &quot; + exception.Message]" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="449.6,89.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>
