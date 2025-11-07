@@ -45,8 +45,6 @@ Bella can understand and execute the following tasks through voice commands:
 - 💻 **Lock Computer** – Immediately locks your Windows session.  
 - 📝 **Create Sticky Note** – Opens a new sticky note and types your memo content.  
 - 💱 **Convert Currency** – Looks up the latest conversion rate between two currencies (e.g., “convert 100 US dollars to Indian rupees”).  
-- 📂 **Open Specific Folders** – Opens common folders like “Downloads” or “Documents.”  
-- 🔍 **Google Search** – Opens your browser and performs a Google search for any query.  
 - 💬 **Conversational Fallback** – If your command isn't a task, Bella engages in a general conversation using Gemini.
 
 ---
@@ -96,7 +94,7 @@ Follow these steps precisely to get Bella running on your machine.
 
 1.  **Clone the Repository:**
     ```bash
-    git clone [https://github.com/tarunpr11/ProjectBella.git](https://github.com/tarunpr11/ProjectBella.git)
+    git clone https://github.com/tarunpr11/ProjectBella.git
     cd Project-Bella
     ```
 
@@ -133,7 +131,7 @@ Follow these steps precisely to get Bella running on your machine.
 2.  **CRITICAL: Install Dependencies (`.objects`):**
     * UiPath projects often fail to build correctly on a new machine if the local package dependencies are not present.
     * **Download the `.objects` folder** from the Google Drive link provided:
-        * **Link:** `[Click here to access the drive link](https://drive.google.com/drive/folders/1lacGnduAQ10nC1vqxsa28FoxASPIKg9q?usp=sharing)`
+        * **Link:** [Click here to access the drive link](https://drive.google.com/drive/folders/1lacGnduAQ10nC1vqxsa28FoxASPIKg9q?usp=sharing)
     * **Place the folder:** Unzip and place the `.objects` folder inside the `Bella_Assistant_Process` directory. The final path should look like: `...\Project Bella\Bella_Assistant_Process\.objects`.
 
 3.  **Review & Publish:**
@@ -151,7 +149,7 @@ Follow these steps precisely to get Bella running on your machine.
     python assistant_brain.py
     ```
 3.  Wait for the console to show: `Listening for wake word...`
-4.  Say your wake word ("Bella").
+4.  Say your wake word ("Hi Bella").
 5.  When Bella replies ("Yes, how can I help?"), give your command.
 
 ---
